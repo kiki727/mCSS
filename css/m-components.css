@@ -1,0 +1,379 @@
+/*
+=================================================
+
+BARS and SIDE BARS
+
+m- *
+
+sb -> sidebar
+==================================================   */
+
+.m-sb {
+  height: 100%;
+  /*  width: 250px;  */
+  background-color: #f2f2f2;
+  position: fixed!important;
+  top: 0;
+  left: -3px;
+  z-index: 10;
+  overflow: auto;
+  padding: 50px 1px 18px 1px;
+  box-shadow: 0px 0px 5px 1px #bebebe;
+  transition-property: width;
+  transition-duration: 350ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+.m-sb-4 {
+  width: 253px
+}
+
+.m-sb-2 {
+  width: 50%;
+}
+
+.m-sb-1 {
+  width: 100%
+}
+
+.m-sb-closed {
+  width: 0%!important
+}
+
+.m-sb, .m-sb * {
+  box-sizing: border-box;
+}
+
+.m-sb-close::before {
+  content: "\02A2F";
+  font-size: 32px;
+  color: #7a7a7a;
+  margin: -40px 8px 8px 8px;
+  float: right
+}
+
+.m-sb-close:hover {
+  content: "\02A2F";
+  color: #333;
+  cursor: pointer!important;
+}
+
+.m-barblock {
+  min-width: 100%;
+  padding: 8px 21px 8px 21px;
+}
+
+.m-barblock:hover {
+  background-color: #ccc;
+}
+
+.m-sb ul {
+  box-sizing: border-box;
+  margin-left: 0!important;
+}
+
+.m-sb li {
+  text-align: left;
+  padding-left: 14px;
+}
+
+.m-sb a {
+  vertical-align: center;
+  color: #888;
+}
+
+.m-sb li:hover>a, .m-sb a:active {
+  color: #333
+}
+
+/*
+===========   cb- command bar  ======================================   */
+
+.m-cb {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f4f4f4;
+  white-space: nowrap;
+  padding: 0px 6px;
+  border: 0;
+  /*  position: relative;   */
+  z-index: 1;
+  margin-bottom: 2rem;
+  margin: 2px 0px
+}
+
+.m-cb::before {
+  height: 1px;
+  width: 100%;
+  content: '';
+  display: block;
+  border-top: 1px solid #dddddd;
+  margin: 6px 0 6px 0;
+}
+
+.m-cb::after {
+  height: 1px;
+  width: 100%;
+  content: '';
+  display: block;
+  border-top: 1px solid #dddddd;
+  margin: 6px 0 12px 0;
+}
+
+.m-cb-button, a.m-cb-button {
+  box-sizing: border-box;
+  margin: 0;
+  box-shadow: none;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #000;
+  font-size: 14px;
+  font-weight: 300;
+  background-color: #f4f4f4;
+  border: 1px solid transparent;
+  cursor: pointer;
+  line-height: 2rem;
+  display: inline-block;
+  padding: 4px 12px;
+  outline: 0;
+  border-radius: 2px;
+}
+
+.m-cb-button:hover, a.m-cb-button:hover {
+  border: 1px solid #dddddd;
+}
+
+.m-cb-button:active, a.m-cb-button:active, .m-cb-button:focus, a.m-cb-button:focus {
+  border: 1px solid #0078d7;
+  color: #0078d7
+}
+
+@media screen and (max-width: 600px) {
+  .m-cb-button, a.m-cb-button, .m-cb {
+    width: 100%;
+    display: block;
+    text-align: center
+  }
+  .m-cb {
+    margin: 0px 0px 12px 0px
+  }
+  .m-cb::before {
+    margin: 0px;
+  }
+  .m-cb::after {
+    margin: 12px 0 12px 0;
+  }
+}
+
+/*
+=======  tabs ===========================   */
+
+/*
+
+<div class="pc-tab">
+        <input checked="checked" id="tab1" type="radio" name="pct" />
+        <input id="tab2" type="radio" name="pct" />
+        <input id="tab3" type="radio" name="pct" />
+          <nav>
+            <ul>
+              <li class="tab1">
+                <label for="tab1">First Tab</label>
+              </li>
+              <li class="tab2">
+                <label for="tab2">Second Tab</label>
+              </li>
+              <li class="tab3">
+                <label for="tab3">Third Tab</label>
+              </li>
+            </ul>
+          </nav>
+          <section>
+            <div class="tab1">
+              <h2>First</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus itaque quidem minus nostrum, voluptatem accusamus aspernatur quia harum ratione, officia laudantium inventore autem doloribus atque labore numquam non. Hic, animi.</p>
+            </div>
+            <div class="tab2">
+              <h2>Second</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nesciunt ipsum dolore error repellendus officiis aliquid a, vitae reprehenderit, accusantium vero, ad. Obcaecati numquam sapiente cupiditate. Praesentium eaque, quae error!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, maiores.</p>
+            </div>
+            <div class="tab3">
+              <h2>Third</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, nobis culpa rem, vitae earum aliquid.</p>
+            </div>
+          </section>
+        </div>
+
+*/
+
+.pc-tab>input, .pc-tab section>div {
+  display: none;
+}
+
+#tab1:checked~section .tab1, #tab2:checked~section .tab2, #tab3:checked~section .tab3, #tab4:checked~section .tab4, #tab5:checked~section .tab5, #tab6:checked~section .tab6, #tab7:checked~section .tab7, #tab8:checked~section .tab8, #tab9:checked~section .tab9, #tab10:checked~section .tab10 {
+  display: block;
+}
+
+#tab1:checked~nav .tab1, #tab2:checked~nav .tab2, #tab3:checked~nav .tab3, #tab4:checked~nav .tab4, #tab5:checked~nav .tab5, #tab6:checked~nav .tab6, #tab7:checked~nav .tab7, #tab8:checked~nav .tab8, #tab9:checked~nav .tab9, #tab10:checked~nav .tab10 {
+  color: red;
+}
+
+.pc-tab {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pc-tab ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pc-tab ul li label {
+  float: left;
+  padding: 6px 18px;
+  border: 1px solid #ddd;
+  border-bottom: 0;
+  background: #f2f2f2;
+  color: #444;
+  font-size: 16px!important;
+  font-weight: 300;
+}
+
+.pc-tab ul li label:hover {
+  cursor: pointer;
+  background: #dddddd;
+}
+
+.pc-tab ul li label:active {
+  background: #FFFFFF;
+}
+
+.pc-tab ul li:not(:last-child) label {
+  border-right-width: 0;
+}
+
+.pc-tab section {
+  clear: both;
+}
+
+.pc-tab section div.tab {
+  padding: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  background-color: #ffffff;
+  line-height: 1.5em;
+  letter-spacing: 0.3px;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+/*
+.pc-tab section div h2 {
+  margin: 0;
+  letter-spacing: 1px;
+  color: #34495e;
+}
+*/
+
+#tab1:checked~nav .tab1 label, #tab2:checked~nav .tab2 label, #tab3:checked~nav .tab3 label, #tab4:checked~nav .tab4 label, #tab5:checked~nav .tab5 label, #tab6:checked~nav .tab6 label, #tab7:checked~nav .tab7 label, #tab8:checked~nav .tab8 label, #tab9:checked~nav .tab9 label, #tab10:checked~nav .tab10 label {
+  background: white;
+  color: #0078d4;
+  position: relative;
+}
+
+#tab1:checked~nav .tab1 label:after, #tab2:checked~nav .tab2 label:after, #tab3:checked~nav .tab3 label:after, #tab4:checked~nav .tab4 label:after, #tab5:checked~nav .tab5 label:after, #tab6:checked~nav .tab6 label:after, #tab7:checked~nav .tab7 label:after, #tab8:checked~nav .tab8 label:after, #tab9:checked~nav .tab9 label:after, #tab10:checked~nav .tab10 label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #ffffff;
+  left: 0;
+  bottom: -1px;
+}
+
+/*
+========  ACCORDION ====================    */
+.acc-container {
+  width: 100%;
+  padding: 1rem 0 2rem 0;
+  border-radius: 2px;
+/*  border:  1px solid #ccc;  */
+}
+
+.acc-container *{
+  box-sizing: border-box;
+}
+
+.acc-container input[type=checkbox].acc,
+.acc-container label {
+  display: inline-block;
+}
+
+.acc-container input[type=checkbox].acc {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+}
+
+.acc-container > label {
+  border: 1px solid #dddddd;
+  background: #f2f2f2;
+  color: #333;
+  width: 100%;
+  font-size: 21px;
+  font-weight: 100;
+  padding: 12px 16px;
+  margin:0;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.acc-container > label::after {
+  content:"\276F";
+  width: 1em;
+  height: 1em;
+  font-size: 18px;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: all .3s;
+}
+
+.acc-container > label:hover {
+  cursor: pointer;
+  border: 1px solid #dddddd;
+  background:#dddddd;
+}
+
+.acc-container .acc-panel {
+  height: 0px;
+  display: none;
+  width: 100%;
+  border:1px solid #ccc;
+  padding: 1.618rem;
+  transition: all .3s ease-in-out;
+  margin-bottom: 6px;
+}
+
+.acc-panel *{
+  box-sizing: border-box;
+  margin-top: 14px;
+}
+
+.acc-container input[type=checkbox].acc:checked + label + div.acc-panel {
+  height: 100%;
+  animation: opac 0.8s;
+  display: block;
+}
+
+.acc-container input[type=checkbox].acc:checked + label {
+  color: #0078d7;
+}
+
+.acc-container input[type=checkbox].acc:checked + label::after {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
