@@ -1040,6 +1040,26 @@ responsive image
   }
 }
 
+.m-anim-blink {
+  animation: blinker 1.2s step-start infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.m-anim-blink-half {
+  animation: blinker-half 1.2s step-start infinite;
+}
+
+@keyframes blinker-half {
+  50% {
+    opacity: .5;
+  }
+}
+
 .m-anim-fading {
   animation: fading 10s infinite;
 }
