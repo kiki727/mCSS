@@ -12,4 +12,4 @@ just download and open it in browser...
 in Css fies are coments how to use components and classes, 
 or you can look in index.html for more info.
 
-**This is just a draft, not working wersion !** 
+**This is just a draft, not working version !** 
